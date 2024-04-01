@@ -63,11 +63,11 @@ public class Ex1 {
 		if (arr == null || arr.length == 0) {
 			return -1;
 		}
-		int count = 0;
+		int sum = arr [0];
 		for (int i = 1; i < arr.length; i++) {
-			count++;
+			sum += arr[i];
 		}
-		return count + 1;
+		return sum;
 	}
 
 	public static void main(String[] args) {

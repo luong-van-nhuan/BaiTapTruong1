@@ -25,6 +25,6 @@ public class Ex1_Test extends TestCase {
 
 	public void testSumOfElements() {
 		int arr[] = { 34, 65, 85, 43, 84, 97, 33, 56 };
-		assertEquals("Tổng các phần tử của dãy là: 8", 8, Ex1.sumOfElements(arr));
+		assertEquals("Tổng các phần tử của dãy là: 497", 497, Ex1.sumOfElements(arr));
 	}
 }
