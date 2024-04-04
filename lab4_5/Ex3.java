@@ -78,6 +78,9 @@ public class Ex3 {
 	}
 
 	public static boolean theNegativeSumIsEqualToThePositiveSum(int arr[]) {
+		if (arr == null || arr.length == 0) {
+			return false;
+		}
 		int negativeTotal = 0;
 		int positiveTotal = 0;
 		for (int number : arr) {
@@ -95,11 +98,11 @@ public class Ex3 {
 		int arr[] = new int[size];
 		Random rd = new Random();
 		for (int i = 0; i < size; i++) {
-			arr[i] = rd.nextInt(101)-50 ;
+			arr[i] = rd.nextInt(101) - 50;
 		}
 		System.out.println("Mảng ngẫu nhiên");
 		for (int number : arr) {
-			System.out.print(number + " ,");		
+			System.out.print(number + " ,");
 		}
 		System.out.print("\n");
 		System.out.println("Có " + countNegativeNumbers(arr) + " số âm");
@@ -107,8 +110,7 @@ public class Ex3 {
 		System.out.println("Có " + countZero(arr) + " số không");
 		System.out.println("Số âm lớn nhất là: " + largestNegativeNumber(arr));
 		System.out.println("Số dương nhỏ nhất là: " + largestPositiveNumber(arr));
-		System.out.println(
-				"|Tổng âm|" + (theNegativeSumIsEqualToThePositiveSum(arr) ? "Có bằng" : "Không bằng") + " tổng dương");
+		System.out.println("|Tổng âm|" + (theNegativeSumIsEqualToThePositiveSum(arr) ? "Có bằng" : "Không bằng") + " tổng dương");
 	}
 
 }

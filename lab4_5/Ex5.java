@@ -1,5 +1,8 @@
 package lab4_5;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Ex5 {
@@ -21,41 +24,58 @@ public class Ex5 {
 		}
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
-			if(arr[i] == x) {
-				count ++;
+			if (arr[i] == x) {
+				count++;
 			}
 		}
 		return count;
 	}
-	public static int locationAppears(int arr[], int x) {
+
+	public static List<Integer> locationAppears(int arr[], int x) {
 		if (arr == null || arr.length == 0) {
-			return 0;
+			return new ArrayList<>();
 		}
-		int location = 0;
-		for(int i = 0; i < arr.length; i++) {
-			if(arr[i] == x) {
-				location = i + 1;
+		List<Integer> locations = new ArrayList<>();
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == x) {
+				locations.add(i + 1);
 			}
 		}
-		return location ;
+		return locations;
+
 	}
-	
+
+	public static List<Integer> deleteAllXElements(int arr[], int x) {
+		if (arr == null || arr.length == 0) {
+			return new ArrayList<>();
+		}
+		List<Integer> arrays = new ArrayList<>();
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] != x) {
+				arrays.add(arr[i]);
+			}
+		}
+		return arrays;
+	}
+
 	public static void main(String[] args) {
 		int x = 7;
 		int size = 20;
 		int arr[] = new int[size];
 		Random rd = new Random();
-		for (int i = 1; i < size; i++) {
-			arr[i] = rd.nextInt(101) - 50;
+		for (int i = 0; i < size; i++) {
+			arr[i] = rd.nextInt(21) - 10;
 		}
 		System.out.println("Mảng ngẫu nhiên");
 		for (int number : arr) {
 			System.out.print(number + ", ");
 		}
-		System.out.print("\n");
-		System.out.println("số x " + (thatNumberAppears(arr, x) ? "có" : "không") + " xuất hiện trong dãy");
-		System.out.println("Số x xuất hiện " + theNumberOfOccurrences(arr, x) + " lần trong dãy");
-		System.out.println("Số x xuất hiện tại vị trí thứ " + locationAppears(arr, x));
-	}
 
+		System.out.print("\n");
+		System.out.println("số " + x + (thatNumberAppears(arr, x) ? " có" : " không") + " xuất hiện trong dãy");
+		System.out.println("Số " + x + " xuất hiện " + theNumberOfOccurrences(arr, x) + " lần trong dãy");
+		System.out.println("Số " + x + " xuất hiện tại vị trí thứ " + locationAppears(arr, x));
+		System.out.println("Mảng ban đầu: " + Arrays.toString(arr));
+		System.out.println("Mảng không có các phần tử " + x + " : " + deleteAllXElements(arr, x));
+	}
 }

@@ -1,5 +1,7 @@
 package lab4_5;
 
+import java.util.Random;
+
 public class Ex1 {
 	public static int largestElementPosition(int arr[]) {
 		if (arr == null || arr.length == 0) {
@@ -71,7 +73,17 @@ public class Ex1 {
 	}
 
 	public static void main(String[] args) {
-		int arr[] = { 34, 65, 85, 43, 84, 97, 33, 56 };
+		int size = 20;
+		int arr[] = new int[size];
+		Random rd = new Random();
+		for (int i = 0; i < size; i++) {
+			arr[i] = rd.nextInt(101) - 50;
+		}
+		System.out.println("Mảng ngẫu nhiên");
+		for (int number : arr) {
+			System.out.print(number + " ,");
+		}
+		System.out.print("\n");
 		System.out.println("Vị trí phần tử lớn nhất của dãy là: " + largestElementPosition(arr));
 		System.out.println("Giá trị phần tử lớn nhất của dãy là: " + largestElementValue(arr));
 		System.out.println("Vị trí phần tử lớn nhỏ của dãy là: " + smallestElementPosition(arr));
