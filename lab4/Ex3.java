@@ -1,4 +1,4 @@
-package lab4_5;
+package lab4;
 
 import java.util.Random;
 
@@ -51,7 +51,7 @@ public class Ex3 {
 		if (arr == null || arr.length == 0) {
 			return 0;
 		}
-		int max = -99999;
+		int max = Integer.MIN_VALUE;
 		for (int i = 1; i < arr.length; i++) {
 			if (arr[i] < 0) {
 				if (max < arr[i]) {
@@ -66,7 +66,7 @@ public class Ex3 {
 		if (arr == null || arr.length == 0) {
 			return 0;
 		}
-		int min = 99999;
+		int min = Integer.MAX_VALUE;
 		for (int i = 1; i < arr.length; i++) {
 			if (arr[i] > 0) {
 				if (min > arr[i]) {

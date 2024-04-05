@@ -1,4 +1,4 @@
-package lab4_5;
+package lab4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,23 +12,25 @@ public class Ex6 {
 
 		}
 		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] <= arr[i -1]) {
+			if (arr[i] < arr[i - 1]) {
 				return false;
 			}
 		}
 		return true;
 	}
-	public static List<Integer> sortUpAscending(int arr []){
+
+	public static List<Integer> sortUpAscending(int arr[]) {
 		if (arr == null || arr.length == 0) {
 			return new ArrayList<>();
 		}
 		List<Integer> numberSeries = new ArrayList<>();
 		Arrays.sort(arr);
-		for(int number : arr) {
+		for (int number : arr) {
 			numberSeries.add(number);
 		}
+		
 		return numberSeries;
-	
+
 	}
 
 	public static void main(String[] args) {

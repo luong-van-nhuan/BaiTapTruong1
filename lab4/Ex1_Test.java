@@ -1,4 +1,4 @@
-package lab4_5;
+package lab4;
 
 import junit.framework.TestCase;
 
